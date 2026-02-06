@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1c1c1a;
+  --foreground: #f5f0e8;
+  --cream: #f5f0e8;
+  --cream-dark: #e8e0d0;
+  --bronze: #c9a96e;
+  --bronze-light: #d4ba85;
+  --bronze-dark: #a8894e;
+  --forest: #2d4a3e;
+  --forest-light: #3a6354;
+  --charcoal: #1c1c1a;
+  --charcoal-light: #2a2a27;
+  --warm-gray: #8a8578;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-bronze: var(--bronze);
+  --color-bronze-light: var(--bronze-light);
+  --color-bronze-dark: var(--bronze-dark);
+  --color-forest: var(--forest);
+  --color-forest-light: var(--forest-light);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-light: var(--charcoal-light);
+  --color-warm-gray: var(--warm-gray);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero image placeholders */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #2d4a3e 0%,
+    #1c1c1a 40%,
+    #3a6354 70%,
+    #2d4a3e 100%
+  );
+}
+
+.nature-gradient-1 {
+  background: linear-gradient(
+    160deg,
+    #3a6354 0%,
+    #2d4a3e 30%,
+    #1c1c1a 60%,
+    #2a2a27 100%
+  );
+}
+
+.nature-gradient-2 {
+  background: linear-gradient(
+    200deg,
+    #4a6b5a 0%,
+    #2d4a3e 40%,
+    #1c1c1a 100%
+  );
+}
+
+.nature-gradient-3 {
+  background: linear-gradient(
+    140deg,
+    #1c1c1a 0%,
+    #2d4a3e 50%,
+    #3a6354 100%
+  );
+}
