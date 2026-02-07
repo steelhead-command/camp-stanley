@@ -46,27 +46,27 @@ export default function BookingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-charcoal px-6 pt-20 text-center">
+      <section className="flex min-h-[40vh] items-center justify-center bg-background px-6 pt-20 text-center">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             Book Your Stay
           </p>
-          <h1 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
             Reserve your spot
           </h1>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-driftwood">
             Pick your dates, choose your site, and leave the rest to us.
           </p>
         </div>
       </section>
 
       {/* What's Included */}
-      <section className="bg-charcoal-light px-6 py-24 lg:py-32">
+      <section className="bg-sand px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             What&rsquo;s Included
           </p>
-          <h2 className="mt-4 mb-12 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 mb-12 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Everything you need for a great stay
           </h2>
           <Amenities />
@@ -76,24 +76,24 @@ export default function BookingPage() {
       {/* Book CTA */}
       <section className="hero-gradient px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-snug text-white sm:text-4xl">
             Ready to book?
           </h2>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-white/80">
             We handle reservations through Hipcamp for a smooth, secure booking experience.
           </p>
           <a
             href="https://www.hipcamp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-bronze px-8 text-sm font-medium uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-bronze-light"
+            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium uppercase tracking-[0.1em] text-sage-dark transition-colors hover:bg-sand"
           >
             Book on Hipcamp &rarr;
           </a>
           <p className="mt-6">
             <Link
               href="/contact"
-              className="text-sm text-cream/60 underline underline-offset-4 transition-colors hover:text-bronze"
+              className="text-sm text-white/70 underline underline-offset-4 transition-colors hover:text-white"
             >
               Questions? Contact us
             </Link>
@@ -102,12 +102,12 @@ export default function BookingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             FAQ
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Frequently asked questions
           </h2>
           <div className="mt-12">
@@ -117,12 +117,12 @@ export default function BookingPage() {
       </section>
 
       {/* Cancellation Policy */}
-      <section className="bg-charcoal-light px-6 py-16">
+      <section className="bg-sand px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-bronze">
+          <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-sage">
             Cancellation Policy
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-cream/60">
+          <p className="mt-4 text-sm leading-relaxed text-driftwood">
             Full refund 14+ days before arrival. 50% refund within 14 days.
             No-shows are non-refundable. Weather exceptions considered on a
             case-by-case basis. Contact us if you need to make changes.

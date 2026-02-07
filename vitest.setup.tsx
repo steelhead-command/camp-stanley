@@ -22,13 +22,9 @@ vi.mock("next/navigation", () => ({
 
 // Mock next/font/google
 vi.mock("next/font/google", () => ({
-  Geist: () => ({
-    variable: "--font-geist-sans",
-    className: "mock-geist",
-  }),
-  Playfair_Display: () => ({
-    variable: "--font-playfair",
-    className: "mock-playfair",
+  DM_Sans: () => ({
+    variable: "--font-dm-sans",
+    className: "mock-dm-sans",
   }),
 }));
 

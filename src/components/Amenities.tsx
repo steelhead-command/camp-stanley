@@ -69,16 +69,16 @@ export default function Amenities() {
     <div className="grid gap-12 sm:grid-cols-3">
       {amenityCategories.map((cat) => (
         <div key={cat.name}>
-          <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-bronze">
+          <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-sage">
             {cat.name}
           </h3>
           <ul className="mt-4 space-y-3">
             {cat.items.map((item) => (
               <li key={item.label} className="flex items-center gap-3">
-                <span className="text-bronze">
+                <span className="text-sage">
                   <AmenityIcon icon={item.icon} />
                 </span>
-                <span className="text-sm text-cream/80">{item.label}</span>
+                <span className="text-sm text-foreground/80">{item.label}</span>
               </li>
             ))}
           </ul>
