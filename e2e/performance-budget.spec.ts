@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Performance budgets", () => {
   test("total JS bundle is under 500KB", async ({ page }) => {
     let totalJS = 0;
+    const jsResponses: any[] = [];
 
     page.on("response", (response) => {
       const url = response.url();
@@ -12,38 +13,54 @@ test.describe("Performance budgets", () => {
         url.endsWith(".js") ||
         url.includes("/_next/static/chunks/")
       ) {
-        const contentLength = response.headers()["content-length"];
-        if (contentLength) {
-          totalJS += parseInt(contentLength, 10);
-        }
+        jsResponses.push(response);
       }
     });
 
     await page.goto("/", { waitUntil: "networkidle" });
 
+    for (const response of jsResponses) {
+      try {
+        const body = await response.body();
+        totalJS += body.length;
+      } catch {
+        // Response body unavailable (e.g. redirect), skip
+      }
+    }
+
     const totalJSKB = totalJS / 1024;
     console.log(`Total JS: ${totalJSKB.toFixed(1)} KB`);
+    expect(totalJSKB).toBeGreaterThan(0);
     expect(totalJSKB).toBeLessThan(500);
   });
 
   test("total CSS is under 50KB", async ({ page }) => {
     let totalCSS = 0;
 
+    const responses: any[] = [];
+
     page.on("response", (response) => {
       const url = response.url();
       const contentType = response.headers()["content-type"] || "";
       if (contentType.includes("css") || url.endsWith(".css")) {
-        const contentLength = response.headers()["content-length"];
-        if (contentLength) {
-          totalCSS += parseInt(contentLength, 10);
-        }
+        responses.push(response);
       }
     });
 
     await page.goto("/", { waitUntil: "networkidle" });
 
+    for (const response of responses) {
+      try {
+        const body = await response.body();
+        totalCSS += body.length;
+      } catch {
+        // Response body unavailable, skip
+      }
+    }
+
     const totalCSSKB = totalCSS / 1024;
     console.log(`Total CSS: ${totalCSSKB.toFixed(1)} KB`);
+    expect(totalCSSKB).toBeGreaterThan(0);
     expect(totalCSSKB).toBeLessThan(50);
   });
 
@@ -58,14 +75,13 @@ test.describe("Performance budgets", () => {
           resolve(lastEntry.startTime);
         }).observe({ type: "largest-contentful-paint", buffered: true });
 
-        // Fallback timeout if LCP is never reported
+        // Timeout — fail explicitly if LCP is never reported
         setTimeout(() => resolve(-1), 10000);
       });
     });
 
     console.log(`LCP: ${lcp.toFixed(0)} ms`);
-    if (lcp > 0) {
-      expect(lcp).toBeLessThan(2500);
-    }
+    expect(lcp, "LCP was not reported by the browser").toBeGreaterThan(0);
+    expect(lcp).toBeLessThan(2500);
   });
 });

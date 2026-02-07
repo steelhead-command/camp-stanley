@@ -1,27 +1,25 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { useRouter } from "next/navigation";
 import Navbar from "../Navbar";
 
-// Get a reference to the mocked module so we can change usePathname per test
-const mockPush = vi.fn();
-
-vi.mock("next/navigation", async () => ({
-  useRouter: () => ({
-    push: mockPush,
-    replace: vi.fn(),
-    prefetch: vi.fn(),
-    back: vi.fn(),
-    forward: vi.fn(),
-    refresh: vi.fn(),
-  }),
-  usePathname: () => "/",
-  useSearchParams: () => new URLSearchParams(),
-}));
+// Access the mock from vitest.setup.tsx — no duplicate vi.mock needed
+const mockRouter = vi.mocked(useRouter);
 
 describe("Navbar", () => {
+  let mockPush: ReturnType<typeof vi.fn>;
+
   beforeEach(() => {
-    mockPush.mockClear();
+    mockPush = vi.fn();
+    mockRouter.mockReturnValue({
+      push: mockPush,
+      replace: vi.fn(),
+      prefetch: vi.fn(),
+      back: vi.fn(),
+      forward: vi.fn(),
+      refresh: vi.fn(),
+    });
   });
 
   it("renders all 6 navigation links on desktop", () => {

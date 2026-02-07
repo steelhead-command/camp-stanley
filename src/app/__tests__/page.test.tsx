@@ -20,7 +20,7 @@ describe("Home page", () => {
   });
 
   it("renders all 3 highlight cards with title, description, and SVG icon", () => {
-    render(<Home />);
+    const { container } = render(<Home />);
     const highlights = [
       {
         title: "Rustic Cabins",
@@ -41,9 +41,9 @@ describe("Home page", () => {
       expect(screen.getByText(h.desc)).toBeInTheDocument();
     }
 
-    // Each highlight card has an SVG icon
-    const svgs = document.querySelectorAll("svg.h-8.w-8");
-    expect(svgs.length).toBeGreaterThanOrEqual(3);
+    // 3 highlight icons + 1 testimonial quote icon = 4 total
+    const svgs = container.querySelectorAll("svg.h-8.w-8");
+    expect(svgs).toHaveLength(4);
   });
 
   it("renders all 4 activity cards", () => {

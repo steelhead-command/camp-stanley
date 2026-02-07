@@ -4,10 +4,12 @@ import RootLayout, { metadata } from "../layout";
 
 describe("RootLayout", () => {
   it("renders children", () => {
+    // Render into document.body to avoid <html> inside <div> invalid DOM
     render(
       <RootLayout>
         <div data-testid="child">Hello</div>
-      </RootLayout>
+      </RootLayout>,
+      { container: document.body }
     );
     expect(screen.getByTestId("child")).toBeInTheDocument();
     expect(screen.getByText("Hello")).toBeInTheDocument();
@@ -17,11 +19,11 @@ describe("RootLayout", () => {
     render(
       <RootLayout>
         <div>content</div>
-      </RootLayout>
+      </RootLayout>,
+      { container: document.body }
     );
     // Navbar renders "Camp Stanley" as logo text
     // Footer also renders "Camp Stanley"
-    // Both should be present
     const campStanleyElements = screen.getAllByText("Camp Stanley");
     expect(campStanleyElements.length).toBeGreaterThanOrEqual(2);
   });
