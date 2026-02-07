@@ -44,11 +44,14 @@ test.describe("Homepage", () => {
   test("hero CTA buttons are clickable", async ({ page }) => {
     await page.goto("/");
 
-    const bookLink = page.getByRole("link", { name: /book a stay/i });
+    // Scope to the hero section to avoid matching nav/footer links
+    const hero = page.locator("section").first();
+
+    const bookLink = hero.getByRole("link", { name: /book a stay/i });
     await expect(bookLink).toBeVisible();
     await expect(bookLink).toHaveAttribute("href", "/booking");
 
-    const storyLink = page.getByRole("link", { name: /our story/i });
+    const storyLink = hero.getByRole("link", { name: /our story/i });
     await expect(storyLink).toBeVisible();
     await expect(storyLink).toHaveAttribute("href", "/about");
   });

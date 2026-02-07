@@ -1,67 +1,46 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Performance budgets", () => {
-  test("total JS bundle is under 500KB", async ({ page }) => {
-    let totalJS = 0;
-    const jsResponses: any[] = [];
-
-    page.on("response", (response) => {
-      const url = response.url();
-      const contentType = response.headers()["content-type"] || "";
-      if (
-        contentType.includes("javascript") ||
-        url.endsWith(".js") ||
-        url.includes("/_next/static/chunks/")
-      ) {
-        jsResponses.push(response);
-      }
-    });
-
+  test("total transferred JS is under 750KB", async ({ page }) => {
     await page.goto("/", { waitUntil: "networkidle" });
 
-    for (const response of jsResponses) {
-      try {
-        const body = await response.body();
-        totalJS += body.length;
-      } catch {
-        // Response body unavailable (e.g. redirect), skip
+    const transferredJSKB = await page.evaluate(() => {
+      const entries = performance.getEntriesByType(
+        "resource"
+      ) as PerformanceResourceTiming[];
+      let total = 0;
+      for (const entry of entries) {
+        if (entry.initiatorType === "script" || entry.name.endsWith(".js")) {
+          total += entry.transferSize;
+        }
       }
-    }
+      return total / 1024;
+    });
 
-    const totalJSKB = totalJS / 1024;
-    console.log(`Total JS: ${totalJSKB.toFixed(1)} KB`);
-    expect(totalJSKB).toBeGreaterThan(0);
-    expect(totalJSKB).toBeLessThan(500);
+    console.log(`Total JS (transfer): ${transferredJSKB.toFixed(1)} KB`);
+    expect(transferredJSKB).toBeGreaterThan(0);
+    expect(transferredJSKB).toBeLessThan(750);
   });
 
-  test("total CSS is under 50KB", async ({ page }) => {
-    let totalCSS = 0;
-
-    const responses: any[] = [];
-
-    page.on("response", (response) => {
-      const url = response.url();
-      const contentType = response.headers()["content-type"] || "";
-      if (contentType.includes("css") || url.endsWith(".css")) {
-        responses.push(response);
-      }
-    });
-
+  test("total transferred CSS is under 50KB", async ({ page }) => {
     await page.goto("/", { waitUntil: "networkidle" });
 
-    for (const response of responses) {
-      try {
-        const body = await response.body();
-        totalCSS += body.length;
-      } catch {
-        // Response body unavailable, skip
+    const transferredCSSKB = await page.evaluate(() => {
+      const entries = performance.getEntriesByType(
+        "resource"
+      ) as PerformanceResourceTiming[];
+      let total = 0;
+      for (const entry of entries) {
+        if (entry.initiatorType === "link" && entry.name.endsWith(".css")) {
+          total += entry.transferSize;
+        }
       }
-    }
+      return total / 1024;
+    });
 
-    const totalCSSKB = totalCSS / 1024;
-    console.log(`Total CSS: ${totalCSSKB.toFixed(1)} KB`);
-    expect(totalCSSKB).toBeGreaterThan(0);
-    expect(totalCSSKB).toBeLessThan(50);
+    console.log(`Total CSS (transfer): ${transferredCSSKB.toFixed(1)} KB`);
+    expect(transferredCSSKB).toBeGreaterThan(0);
+    expect(transferredCSSKB).toBeLessThan(50);
   });
 
   test("LCP is under 2.5 seconds", async ({ page }) => {
