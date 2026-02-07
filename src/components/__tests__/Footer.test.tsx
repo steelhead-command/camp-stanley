@@ -31,10 +31,8 @@ describe("Footer", () => {
 
   it("renders contact information", () => {
     render(<Footer />);
-    expect(screen.getByText("info@campstanley.com")).toBeInTheDocument();
-    expect(screen.getByText("(555) 123-4567")).toBeInTheDocument();
-    expect(screen.getByText(/123 Stanley Lane/)).toBeInTheDocument();
-    expect(screen.getByText(/Hill Country, TX 78624/)).toBeInTheDocument();
+    expect(screen.getByText("carolynfstanley@yahoo.com")).toBeInTheDocument();
+    expect(screen.getByText("Pacific Northwest")).toBeInTheDocument();
   });
 
   it("displays the current year in copyright", () => {

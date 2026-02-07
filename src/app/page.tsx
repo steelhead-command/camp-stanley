@@ -23,10 +23,37 @@ const highlights = [
 ];
 
 const activities = [
-  { name: "Hiking & Trail Running", gradient: "nature-gradient-1", image: null },
-  { name: "Fishing & Kayaking", gradient: "nature-gradient-2", image: null },
-  { name: "Campfire Cooking", gradient: "nature-gradient-3", image: "/Tent.jpg" },
-  { name: "Stargazing", gradient: "hero-gradient", image: null },
+  { name: "Hiking & Trail Running", image: "/Grounds.jpg" },
+  { name: "Fishing & Kayaking", image: "/Fishing.jpg" },
+  { name: "Campfire Cooking", image: "/Tent.jpg" },
+  { name: "Stargazing", image: "/Sunset-River.jpg" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "We\u2019ve been bringing our family here every summer for twelve years. The kids count down the days, and honestly, so do we.",
+    author: "The Martinez Family",
+    location: "Portland, OR",
+  },
+  {
+    quote:
+      "I came for a weekend and stayed for a week. There\u2019s something about waking up by the river that resets your whole system.",
+    author: "David Chen",
+    location: "Seattle, WA",
+  },
+  {
+    quote:
+      "We held our company retreat here and it was the best team-building experience we\u2019ve ever had. The land does the work for you.",
+    author: "Sarah Okonkwo",
+    location: "Bend, OR",
+  },
+  {
+    quote:
+      "My daughter caught her first fish here. My son saw the Milky Way for the first time. Some places just make memories stick.",
+    author: "The Nguyen Family",
+    location: "Eugene, OR",
+  },
 ];
 
 function HighlightIcon({ icon }: { icon: string }) {
@@ -67,7 +94,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 bg-charcoal/60" />
 
         <p className="relative z-10 text-xs font-medium uppercase tracking-[0.25em] text-bronze">
-          Est. 1962 &middot; Hill Country, Texas
+          Est. 1999 &middot; Pacific Northwest
         </p>
 
         <h1 className="relative z-10 mt-6 max-w-3xl font-serif text-5xl leading-tight tracking-tight text-cream sm:text-6xl lg:text-7xl">
@@ -144,19 +171,15 @@ export default function Home() {
             {activities.map((act) => (
               <div
                 key={act.name}
-                className={`${act.image ? "" : act.gradient} relative flex aspect-[16/9] items-end overflow-hidden rounded-2xl p-6 transition-transform hover:scale-[1.02]`}
+                className="relative flex aspect-[16/9] items-end overflow-hidden rounded-2xl p-6 transition-transform hover:scale-[1.02]"
               >
-                {act.image && (
-                  <>
-                    <Image
-                      src={act.image}
-                      alt={act.name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-charcoal/40" />
-                  </>
-                )}
+                <Image
+                  src={act.image}
+                  alt={act.name}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-charcoal/40" />
                 <span className="relative z-10 text-lg font-semibold text-cream">
                   {act.name}
                 </span>
@@ -175,19 +198,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───── Testimonial ───── */}
+      {/* ───── Testimonials ───── */}
       <section className="bg-charcoal px-6 py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="mx-auto h-8 w-8 text-bronze/40">
-            <path d="M11 7H7a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2H5v-1a2 2 0 012-2h4V7zm10 0h-4a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2h-2v-1a2 2 0 012-2h4V7z" />
-          </svg>
-          <blockquote className="mt-8 font-serif text-2xl leading-relaxed text-cream/90 sm:text-3xl">
-            We&rsquo;ve been bringing our family here every summer for twelve
-            years. The kids count down the days, and honestly, so do we.
-          </blockquote>
-          <p className="mt-6 text-sm text-warm-gray">
-            &mdash; The Martinez Family, Austin TX
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+            Guest Stories
           </p>
+          <h2 className="mt-4 text-center font-serif text-3xl leading-snug text-cream sm:text-4xl">
+            What people are saying
+          </h2>
+          <div className="mt-16 grid gap-8 sm:grid-cols-2">
+            {testimonials.map((t) => (
+              <div
+                key={t.author}
+                className="rounded-2xl border border-white/5 bg-charcoal-light p-8"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-bronze/30">
+                  <path d="M11 7H7a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2H5v-1a2 2 0 012-2h4V7zm10 0h-4a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2h-2v-1a2 2 0 012-2h4V7z" />
+                </svg>
+                <blockquote className="mt-4 font-serif text-lg leading-relaxed text-cream/90">
+                  {t.quote}
+                </blockquote>
+                <p className="mt-4 text-sm text-warm-gray">
+                  &mdash; {t.author}, {t.location}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

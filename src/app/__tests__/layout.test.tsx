@@ -4,7 +4,6 @@ import RootLayout, { metadata } from "../layout";
 
 describe("RootLayout", () => {
   it("renders children", () => {
-    // Render into document.body to avoid <html> inside <div> invalid DOM
     render(
       <RootLayout>
         <div data-testid="child">Hello</div>
@@ -15,17 +14,18 @@ describe("RootLayout", () => {
     expect(screen.getByText("Hello")).toBeInTheDocument();
   });
 
-  it("includes Navbar and Footer", () => {
+  it("includes Navbar, Footer, and NewsletterSignup", () => {
     render(
       <RootLayout>
         <div>content</div>
       </RootLayout>,
       { container: document.body }
     );
-    // Navbar renders "Camp Stanley" as logo text
-    // Footer also renders "Camp Stanley"
+    // Navbar and Footer both render "Camp Stanley"
     const campStanleyElements = screen.getAllByText("Camp Stanley");
     expect(campStanleyElements.length).toBeGreaterThanOrEqual(2);
+    // NewsletterSignup renders its heading
+    expect(screen.getByText(/stay in the loop/i)).toBeInTheDocument();
   });
 
   it("exports correct metadata title", () => {
@@ -35,5 +35,9 @@ describe("RootLayout", () => {
   it("exports correct metadata description", () => {
     expect(metadata.description).toContain("Camp Stanley");
     expect(metadata.description).toContain("year-round campsite");
+  });
+
+  it("exports OpenGraph metadata", () => {
+    expect(metadata.openGraph).toBeDefined();
   });
 });
