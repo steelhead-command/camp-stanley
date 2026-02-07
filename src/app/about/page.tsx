@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative flex min-h-[50vh] items-center justify-center px-6 text-center">
         <Image
-          src="/River.jpg"
+          src="/camp-stanley/River.jpg"
           alt="The river at Camp Stanley"
           fill
           priority
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/Morning-River.jpg"
+                src="/camp-stanley/Morning-River.jpg"
                 alt="Morning sunlight filtering through trees along the river"
                 fill
                 className="object-cover"

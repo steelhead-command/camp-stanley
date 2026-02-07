@@ -23,10 +23,10 @@ const highlights = [
 ];
 
 const activities = [
-  { name: "Hiking & Trail Running", image: "/Grounds.jpg" },
-  { name: "Fishing & Kayaking", image: "/Fishing.jpg" },
-  { name: "Campfire Cooking", image: "/Tent.jpg" },
-  { name: "Stargazing", image: "/Sunset-River.jpg" },
+  { name: "Hiking & Trail Running", image: "/camp-stanley/Grounds.jpg" },
+  { name: "Fishing & Kayaking", image: "/camp-stanley/Fishing.jpg" },
+  { name: "Campfire Cooking", image: "/camp-stanley/Tent.jpg" },
+  { name: "Stargazing", image: "/camp-stanley/Sunset-River.jpg" },
 ];
 
 const testimonials = [
@@ -85,7 +85,7 @@ export default function Home() {
       {/* ───── Hero ───── */}
       <section className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 text-center">
         <Image
-          src="/River.jpg"
+          src="/camp-stanley/River.jpg"
           alt="River flowing through the Camp Stanley grounds"
           fill
           priority

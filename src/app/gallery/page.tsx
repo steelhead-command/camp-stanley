@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 
 const photos = [
-  { src: "/River.jpg", alt: "River flowing through the Camp Stanley grounds", category: "Grounds" },
-  { src: "/Tent.jpg", alt: "Camping tent under the trees at dusk", category: "Accommodations" },
-  { src: "/Morning-River.jpg", alt: "Morning sunlight filtering through trees along the river", category: "Grounds" },
-  { src: "/Sunset-River.jpg", alt: "Sunset over the river with misty waters", category: "Grounds" },
-  { src: "/Fishing.jpg", alt: "Guest holding a fresh catch by the river", category: "Activities" },
-  { src: "/Grounds.jpg", alt: "Camp grounds with archery target and towering trees", category: "Grounds" },
-  { src: "/Candles.jpg", alt: "Candle-making workshop in the craft lodge", category: "Activities" },
+  { src: "/camp-stanley/River.jpg", alt: "River flowing through the Camp Stanley grounds", category: "Grounds" },
+  { src: "/camp-stanley/Tent.jpg", alt: "Camping tent under the trees at dusk", category: "Accommodations" },
+  { src: "/camp-stanley/Morning-River.jpg", alt: "Morning sunlight filtering through trees along the river", category: "Grounds" },
+  { src: "/camp-stanley/Sunset-River.jpg", alt: "Sunset over the river with misty waters", category: "Grounds" },
+  { src: "/camp-stanley/Fishing.jpg", alt: "Guest holding a fresh catch by the river", category: "Activities" },
+  { src: "/camp-stanley/Grounds.jpg", alt: "Camp grounds with archery target and towering trees", category: "Grounds" },
+  { src: "/camp-stanley/Candles.jpg", alt: "Candle-making workshop in the craft lodge", category: "Activities" },
 ];
 
 const categories = ["All", "Grounds", "Activities", "Accommodations"] as const;

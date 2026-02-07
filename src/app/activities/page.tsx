@@ -27,7 +27,7 @@ const categories: ActivityCategory[] = [
   {
     title: "On the Water",
     subtitle: "The river runs through everything we do",
-    image: "/River.jpg",
+    image: "/camp-stanley/River.jpg",
     activities: [
       {
         name: "Fishing",
@@ -58,7 +58,7 @@ const categories: ActivityCategory[] = [
   {
     title: "On the Land",
     subtitle: "Eight miles of trails and wide-open meadows",
-    image: "/Grounds.jpg",
+    image: "/camp-stanley/Grounds.jpg",
     activities: [
       {
         name: "Hiking",
@@ -89,7 +89,7 @@ const categories: ActivityCategory[] = [
   {
     title: "After Dark",
     subtitle: "When the sun sets, the real magic begins",
-    image: "/Tent.jpg",
+    image: "/camp-stanley/Tent.jpg",
     activities: [
       {
         name: "Campfire Cooking",
@@ -159,7 +159,7 @@ export default function ActivitiesPage() {
       {/* Hero */}
       <section className="relative flex min-h-[50vh] items-center justify-center px-6 text-center">
         <Image
-          src="/Sunset-River.jpg"
+          src="/camp-stanley/Sunset-River.jpg"
           alt="Sunset over the river at Camp Stanley"
           fill
           priority

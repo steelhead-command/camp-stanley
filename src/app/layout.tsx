@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "A Pacific Northwest retreat for families and groups since 1999. A premier camping and fishing lodge with crafting, river access, and starlit skies.",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/River.jpg", width: 1200, height: 800, alt: "Camp Stanley river view" }],
+    images: [{ url: "/camp-stanley/River.jpg", width: 1200, height: 800, alt: "Camp Stanley river view" }],
   },
 };
 
@@ -44,7 +44,7 @@ const jsonLd = {
     addressRegion: "Pacific Northwest",
     addressCountry: "US",
   },
-  image: "/River.jpg",
+  image: "/camp-stanley/River.jpg",
 };
 
 export default function RootLayout({
