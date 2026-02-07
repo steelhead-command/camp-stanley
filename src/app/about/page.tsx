@@ -22,33 +22,33 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative flex min-h-[50vh] items-center justify-center px-6 text-center">
         <Image
-          src="/camp-stanley/River.jpg"
-          alt="The river at Camp Stanley"
+          src="/camp-stanley/Morning-River.jpg"
+          alt="Morning sunlight filtering through trees along the river"
           fill
           priority
           className="object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-charcoal/65" />
+        <div className="pointer-events-none absolute inset-0 bg-stone/50" />
         <div className="relative z-10">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage-light">
             Our Story
           </p>
-          <h1 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
             Rooted in the Pacific Northwest since 1999
           </h1>
         </div>
       </section>
 
       {/* Origin Story */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             How It Started
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             A place worth coming back to
           </h2>
-          <div className="mt-8 space-y-6 text-sm leading-relaxed text-cream/70 sm:text-base">
+          <div className="mt-8 space-y-6 text-sm leading-relaxed text-driftwood sm:text-base">
             <p>
               In 1999, Nick and Carolyn Stanley found a piece of land in the Pacific
               Northwest that felt like it had been waiting for them — a stretch of river
@@ -72,17 +72,17 @@ export default function AboutPage() {
       </section>
 
       {/* The Land */}
-      <section className="bg-charcoal-light px-6 py-24 lg:py-32">
+      <section className="bg-sand px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+              <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
                 The Land
               </p>
-              <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
                 Evergreen forests, river, and sky
               </h2>
-              <div className="mt-8 space-y-4 text-sm leading-relaxed text-cream/70">
+              <div className="mt-8 space-y-4 text-sm leading-relaxed text-driftwood">
                 <p>
                   The property follows the river through old-growth evergreens, with fishing
                   banks, swimming holes, and gravel bars that shift with the seasons.
@@ -102,8 +102,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/camp-stanley/Morning-River.jpg"
-                alt="Morning sunlight filtering through trees along the river"
+                src="/camp-stanley/Grounds.jpg"
+                alt="Camp grounds with archery target and towering trees"
                 fill
                 className="object-cover"
               />
@@ -113,12 +113,12 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Values */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             What We Believe
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Simple values, wide-open spaces
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
@@ -137,8 +137,8 @@ export default function AboutPage() {
               },
             ].map((v) => (
               <div key={v.title}>
-                <h3 className="text-lg font-semibold text-cream">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-warm-gray">{v.text}</p>
+                <h3 className="text-lg font-semibold text-foreground">{v.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-driftwood">{v.text}</p>
               </div>
             ))}
           </div>
@@ -146,21 +146,21 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-charcoal-light px-6 py-24 lg:py-32">
+      <section className="bg-sand px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             Milestones
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Over two decades and counting
           </h2>
           <div className="mt-12 space-y-8">
             {milestones.map((m) => (
               <div key={m.year} className="flex gap-6">
-                <span className="w-16 shrink-0 text-sm font-medium text-bronze">
+                <span className="w-16 shrink-0 text-sm font-medium text-sage">
                   {m.year}
                 </span>
-                <p className="text-sm leading-relaxed text-cream/70">{m.event}</p>
+                <p className="text-sm leading-relaxed text-driftwood">{m.event}</p>
               </div>
             ))}
           </div>
@@ -168,12 +168,12 @@ export default function AboutPage() {
       </section>
 
       {/* Amenities */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             On the Grounds
           </p>
-          <h2 className="mt-4 mb-12 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 mb-12 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Everything you need, nothing you don&rsquo;t
           </h2>
           <Amenities />
@@ -181,12 +181,12 @@ export default function AboutPage() {
       </section>
 
       {/* Team placeholder */}
-      <section className="bg-charcoal-light px-6 py-24 lg:py-32">
+      <section className="bg-sand px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             The Team
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             The people behind the place
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
@@ -197,13 +197,13 @@ export default function AboutPage() {
             ].map((member) => (
               <div
                 key={member.name}
-                className="flex flex-col items-center rounded-2xl border border-white/5 bg-charcoal p-8 text-center"
+                className="flex flex-col items-center rounded-2xl border border-stone/10 bg-white p-8 text-center"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-forest/30 text-2xl text-bronze">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-sage/15 text-2xl text-sage">
                   {member.name[0]}
                 </div>
-                <h3 className="mt-4 font-medium text-cream">{member.name}</h3>
-                <p className="mt-1 text-sm text-warm-gray">{member.role}</p>
+                <h3 className="mt-4 font-medium text-foreground">{member.name}</h3>
+                <p className="mt-1 text-sm text-driftwood">{member.role}</p>
               </div>
             ))}
           </div>
@@ -213,15 +213,15 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="hero-gradient px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-snug text-white sm:text-4xl">
             Come see for yourself
           </h2>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-white/80">
             The best way to know Camp Stanley is to be here.
           </p>
           <Link
             href="/booking"
-            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-bronze px-8 text-sm font-medium uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-bronze-light"
+            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium uppercase tracking-[0.1em] text-sage-dark transition-colors hover:bg-sand"
           >
             Book Your Stay
           </Link>

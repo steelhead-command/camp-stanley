@@ -39,14 +39,14 @@ describe("Navbar", () => {
     }
   });
 
-  it("applies text-bronze class to the active route", () => {
+  it("applies text-sage class to the active route", () => {
     render(<Navbar />);
     // Home link (href="/") should be active since usePathname returns "/"
     const homeLinks = screen.getAllByText("Home");
     const desktopHomeLink = homeLinks.find(
       (el) => el.tagName.toLowerCase() === "a"
     );
-    expect(desktopHomeLink?.className).toContain("text-bronze");
+    expect(desktopHomeLink?.className).toContain("text-sage");
   });
 
   it("toggles mobile menu open and closed", async () => {

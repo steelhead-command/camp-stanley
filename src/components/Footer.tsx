@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-charcoal">
+    <footer className="border-t border-white/10 bg-stone">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-2xl text-cream">Camp Stanley</h3>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-warm-gray">
+            <h3 className="text-2xl font-bold text-white">Camp Stanley</h3>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               A year-round retreat where families and companies come together to
               live, laugh, and create lasting memories in nature.
             </p>
@@ -16,7 +16,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-bronze">
+            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-sage-light">
               Explore
             </h4>
             <div className="mt-4 flex flex-col gap-3">
@@ -30,7 +30,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-cream/60 transition-colors hover:text-bronze-light"
+                  className="text-sm text-white/50 transition-colors hover:text-sage-light"
                 >
                   {link.label}
                 </Link>
@@ -40,18 +40,18 @@ export default function Footer() {
 
           {/* Contact info */}
           <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-bronze">
+            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-sage-light">
               Get in Touch
             </h4>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-cream/60">
+            <div className="mt-4 flex flex-col gap-3 text-sm text-white/50">
               <p>carolynfstanley@yahoo.com</p>
               <p>Pacific Northwest</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/5 pt-8 text-center">
-          <p className="text-xs text-warm-gray">
+        <div className="mt-16 border-t border-white/10 pt-8 text-center">
+          <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} Camp Stanley. All rights reserved.
           </p>
         </div>

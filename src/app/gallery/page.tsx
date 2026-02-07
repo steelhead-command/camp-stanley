@@ -27,22 +27,22 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-charcoal px-6 pt-20 text-center">
+      <section className="flex min-h-[40vh] items-center justify-center bg-background px-6 pt-20 text-center">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             Gallery
           </p>
-          <h1 className="mt-4 font-serif text-4xl leading-tight text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
             A glimpse of camp life
           </h1>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-driftwood">
             More photos coming soon — this is just the beginning.
           </p>
         </div>
       </section>
 
       {/* Filter Tabs */}
-      <section className="bg-charcoal px-6 pb-6 pt-12">
+      <section className="bg-background px-6 pb-6 pt-12">
         <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-2">
           {categories.map((cat) => (
             <button
@@ -50,8 +50,8 @@ export default function GalleryPage() {
               onClick={() => setActiveCategory(cat)}
               className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-[0.1em] transition-colors ${
                 activeCategory === cat
-                  ? "bg-bronze text-charcoal"
-                  : "border border-white/10 text-cream/60 hover:text-cream"
+                  ? "bg-sage text-white"
+                  : "border border-stone/15 text-driftwood hover:text-foreground"
               }`}
             >
               {cat}
@@ -61,7 +61,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Photo Grid */}
-      <section className="bg-charcoal px-6 py-12">
+      <section className="bg-background px-6 py-12">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {filtered.map((photo, i) => (
             <button
@@ -75,13 +75,13 @@ export default function GalleryPage() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-charcoal/0 transition-colors group-hover:bg-charcoal/30" />
+              <div className="absolute inset-0 bg-stone/0 transition-colors group-hover:bg-stone/20" />
             </button>
           ))}
         </div>
 
         {filtered.length === 0 && (
-          <p className="py-12 text-center text-sm text-warm-gray">
+          <p className="py-12 text-center text-sm text-driftwood">
             No photos in this category yet — check back soon.
           </p>
         )}
@@ -90,12 +90,12 @@ export default function GalleryPage() {
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-stone/95 p-4"
           onClick={() => setLightbox(null)}
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute right-6 top-6 text-cream/60 hover:text-cream"
+            className="absolute right-6 top-6 text-white/60 hover:text-white"
             aria-label="Close lightbox"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-8 w-8">
@@ -111,7 +111,7 @@ export default function GalleryPage() {
                   e.stopPropagation();
                   setLightbox((lightbox - 1 + filtered.length) % filtered.length);
                 }}
-                className="absolute left-4 text-cream/60 hover:text-cream"
+                className="absolute left-4 text-white/60 hover:text-white"
                 aria-label="Previous photo"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-8 w-8">
@@ -123,7 +123,7 @@ export default function GalleryPage() {
                   e.stopPropagation();
                   setLightbox((lightbox + 1) % filtered.length);
                 }}
-                className="absolute right-16 text-cream/60 hover:text-cream"
+                className="absolute right-16 text-white/60 hover:text-white"
                 aria-label="Next photo"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-8 w-8">
@@ -141,7 +141,7 @@ export default function GalleryPage() {
               height={800}
               className="max-h-[80vh] w-auto rounded-lg object-contain"
             />
-            <p className="mt-3 text-center text-sm text-cream/60">
+            <p className="mt-3 text-center text-sm text-white/60">
               {filtered[lightbox].alt}
             </p>
           </div>

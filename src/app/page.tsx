@@ -91,18 +91,18 @@ export default function Home() {
           priority
           className="object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-charcoal/60" />
+        <div className="pointer-events-none absolute inset-0 bg-stone/50" />
 
-        <p className="relative z-10 text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+        <p className="relative z-10 text-xs font-medium uppercase tracking-[0.25em] text-sage-light">
           Est. 1999 &middot; Pacific Northwest
         </p>
 
-        <h1 className="relative z-10 mt-6 max-w-3xl font-serif text-5xl leading-tight tracking-tight text-cream sm:text-6xl lg:text-7xl">
+        <h1 className="relative z-10 mt-6 max-w-3xl text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
           Where Every Season <br className="hidden sm:block" />
           Feels Like Home
         </h1>
 
-        <p className="relative z-10 mt-6 max-w-xl text-lg leading-relaxed text-cream/70">
+        <p className="relative z-10 mt-6 max-w-xl text-lg leading-relaxed text-white/80">
           A year-round retreat for families and groups to unplug, explore, and
           make memories that outlast the campfire.
         </p>
@@ -110,45 +110,45 @@ export default function Home() {
         <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row">
           <Link
             href="/booking"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-bronze px-8 text-sm font-medium uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-bronze-light"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-sage px-8 text-sm font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-sage-light"
           >
             Book a Stay
           </Link>
           <Link
             href="/about"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-cream/20 px-8 text-sm font-medium uppercase tracking-[0.1em] text-cream/80 transition-colors hover:border-cream/40 hover:text-cream"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 px-8 text-sm font-medium uppercase tracking-[0.1em] text-white/90 transition-colors hover:border-white/50 hover:text-white"
           >
             Our Story
           </Link>
         </div>
 
         {/* scroll indicator */}
-        <div className="absolute bottom-10 z-10 flex flex-col items-center gap-2 text-cream/40">
+        <div className="absolute bottom-10 z-10 flex flex-col items-center gap-2 text-white/40">
           <span className="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
-          <div className="h-8 w-px bg-cream/20" />
+          <div className="h-8 w-px bg-white/20" />
         </div>
       </section>
 
       {/* ───── Highlights ───── */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             What We Offer
           </p>
-          <h2 className="mt-4 max-w-lg font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 max-w-lg text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Simple comforts, wide-open spaces
           </h2>
 
           <div className="mt-16 grid gap-12 sm:grid-cols-3">
             {highlights.map((item) => (
               <div key={item.title} className="group">
-                <div className="text-bronze transition-colors group-hover:text-bronze-light">
+                <div className="text-sage transition-colors group-hover:text-sage-light">
                   <HighlightIcon icon={item.icon} />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-cream">
+                <h3 className="mt-5 text-lg font-semibold text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-warm-gray">
+                <p className="mt-2 text-sm leading-relaxed text-driftwood">
                   {item.description}
                 </p>
               </div>
@@ -158,12 +158,12 @@ export default function Home() {
       </section>
 
       {/* ───── Activities Grid ───── */}
-      <section className="bg-charcoal-light px-6 py-24 lg:py-32">
+      <section className="bg-sand px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
             Things to Do
           </p>
-          <h2 className="mt-4 max-w-lg font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 max-w-lg text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             Adventure waits outside your door
           </h2>
 
@@ -179,8 +179,8 @@ export default function Home() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-charcoal/40" />
-                <span className="relative z-10 text-lg font-semibold text-cream">
+                <div className="absolute inset-0 bg-stone/40" />
+                <span className="relative z-10 text-lg font-semibold text-white">
                   {act.name}
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/activities"
-              className="text-sm font-medium uppercase tracking-[0.15em] text-bronze transition-colors hover:text-bronze-light"
+              className="text-sm font-medium uppercase tracking-[0.15em] text-sage transition-colors hover:text-sage-light"
             >
               View All Activities &rarr;
             </Link>
@@ -199,27 +199,27 @@ export default function Home() {
       </section>
 
       {/* ───── Testimonials ───── */}
-      <section className="bg-charcoal px-6 py-24 lg:py-32">
+      <section className="bg-background px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-5xl">
-          <p className="text-center text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-center text-xs font-medium uppercase tracking-[0.25em] text-sage">
             Guest Stories
           </p>
-          <h2 className="mt-4 text-center font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="mt-4 text-center text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             What people are saying
           </h2>
           <div className="mt-16 grid gap-8 sm:grid-cols-2">
             {testimonials.map((t) => (
               <div
                 key={t.author}
-                className="rounded-2xl border border-white/5 bg-charcoal-light p-8"
+                className="rounded-2xl border border-stone/10 bg-sand p-8"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-bronze/30">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-sage/30">
                   <path d="M11 7H7a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2H5v-1a2 2 0 012-2h4V7zm10 0h-4a4 4 0 00-4 4v0a4 4 0 004 4h0a2 2 0 002-2v-1a2 2 0 00-2-2h-2v-1a2 2 0 012-2h4V7z" />
                 </svg>
-                <blockquote className="mt-4 font-serif text-lg leading-relaxed text-cream/90">
+                <blockquote className="mt-4 text-lg leading-relaxed text-foreground/90">
                   {t.quote}
                 </blockquote>
-                <p className="mt-4 text-sm text-warm-gray">
+                <p className="mt-4 text-sm text-driftwood">
                   &mdash; {t.author}, {t.location}
                 </p>
               </div>
@@ -231,16 +231,16 @@ export default function Home() {
       {/* ───── CTA ───── */}
       <section className="hero-gradient px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-snug text-white sm:text-4xl">
             Your next chapter starts here
           </h2>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-white/80">
             Whether it&rsquo;s a weekend getaway or a week-long retreat, we&rsquo;ll
             save a spot by the fire for you.
           </p>
           <Link
             href="/booking"
-            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-bronze px-8 text-sm font-medium uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-bronze-light"
+            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium uppercase tracking-[0.1em] text-sage-dark transition-colors hover:bg-sand"
           >
             Check Availability
           </Link>

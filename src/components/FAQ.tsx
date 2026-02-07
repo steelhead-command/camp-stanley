@@ -11,7 +11,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-white/10">
+    <div className="divide-y divide-stone/10">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
@@ -21,7 +21,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
               className="flex w-full items-center justify-between py-5 text-left"
               aria-expanded={isOpen}
             >
-              <span className="pr-4 text-sm font-medium text-cream sm:text-base">
+              <span className="pr-4 text-sm font-medium text-foreground sm:text-base">
                 {item.question}
               </span>
               <svg
@@ -29,7 +29,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
-                className={`h-5 w-5 shrink-0 text-bronze transition-transform duration-300 ${
+                className={`h-5 w-5 shrink-0 text-sage transition-transform duration-300 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               >
@@ -42,7 +42,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="pb-5 text-sm leading-relaxed text-warm-gray">
+                <p className="pb-5 text-sm leading-relaxed text-driftwood">
                   {item.answer}
                 </p>
               </div>

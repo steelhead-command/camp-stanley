@@ -89,7 +89,7 @@ const categories: ActivityCategory[] = [
   {
     title: "After Dark",
     subtitle: "When the sun sets, the real magic begins",
-    image: "/camp-stanley/Tent.jpg",
+    image: "/camp-stanley/Candles.jpg",
     activities: [
       {
         name: "Campfire Cooking",
@@ -165,12 +165,12 @@ export default function ActivitiesPage() {
           priority
           className="object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-charcoal/65" />
+        <div className="pointer-events-none absolute inset-0 bg-stone/50" />
         <div className="relative z-10">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage-light">
             Things To Do
           </p>
-          <h1 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-cream sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
             Adventure waits outside your door
           </h1>
         </div>
@@ -181,32 +181,32 @@ export default function ActivitiesPage() {
         <section
           key={cat.title}
           className={`px-6 py-24 lg:py-32 ${
-            catIndex % 2 === 0 ? "bg-charcoal" : "bg-charcoal-light"
+            catIndex % 2 === 0 ? "bg-background" : "bg-sand"
           }`}
         >
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
               {/* Info side */}
               <div className={catIndex % 2 === 1 ? "lg:order-2" : ""}>
-                <p className="text-xs font-medium uppercase tracking-[0.25em] text-bronze">
+                <p className="text-xs font-medium uppercase tracking-[0.25em] text-sage">
                   {cat.title}
                 </p>
-                <h2 className="mt-4 font-serif text-3xl leading-snug text-cream sm:text-4xl">
+                <h2 className="mt-4 text-3xl font-bold leading-snug text-foreground sm:text-4xl">
                   {cat.subtitle}
                 </h2>
 
                 <div className="mt-10 space-y-8">
                   {cat.activities.map((act) => (
                     <div key={act.name} className="flex gap-4">
-                      <span className="mt-1 text-bronze">
+                      <span className="mt-1 text-sage">
                         <ActivityIcon icon={act.icon} />
                       </span>
                       <div>
-                        <h3 className="font-medium text-cream">{act.name}</h3>
-                        <p className="mt-1 text-sm leading-relaxed text-cream/70">
+                        <h3 className="font-medium text-foreground">{act.name}</h3>
+                        <p className="mt-1 text-sm leading-relaxed text-driftwood">
                           {act.description}
                         </p>
-                        <div className="mt-2 flex gap-4 text-xs text-warm-gray">
+                        <div className="mt-2 flex gap-4 text-xs text-driftwood">
                           <span>{act.bestSeason}</span>
                           <span>&middot;</span>
                           <span>{act.skillLevel}</span>
@@ -236,15 +236,15 @@ export default function ActivitiesPage() {
       {/* CTA */}
       <section className="hero-gradient px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl leading-snug text-cream sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-snug text-white sm:text-4xl">
             Ready to explore?
           </h2>
-          <p className="mt-4 text-lg text-cream/70">
+          <p className="mt-4 text-lg text-white/80">
             Pick your adventure and reserve your dates.
           </p>
           <Link
             href="/booking"
-            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-bronze px-8 text-sm font-medium uppercase tracking-[0.1em] text-charcoal transition-colors hover:bg-bronze-light"
+            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium uppercase tracking-[0.1em] text-sage-dark transition-colors hover:bg-sand"
           >
             Book Your Stay
           </Link>

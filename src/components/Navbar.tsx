@@ -19,12 +19,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-sm border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone/10">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <span className="font-serif text-2xl tracking-wide text-cream">
+            <span className="text-2xl font-bold tracking-wide text-foreground">
               Camp Stanley
             </span>
           </Link>
@@ -37,8 +37,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 ${
                   pathname === link.href
-                    ? "text-bronze"
-                    : "text-cream/70 hover:text-bronze-light"
+                    ? "text-sage"
+                    : "text-stone/60 hover:text-sage-light"
                 }`}
               >
                 {link.label}
@@ -53,17 +53,17 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block h-px w-6 bg-cream transition-all duration-300 ${
+              className={`block h-px w-6 bg-foreground transition-all duration-300 ${
                 mobileOpen ? "translate-y-[7px] rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-px w-6 bg-cream transition-all duration-300 ${
+              className={`block h-px w-6 bg-foreground transition-all duration-300 ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-px w-6 bg-cream transition-all duration-300 ${
+              className={`block h-px w-6 bg-foreground transition-all duration-300 ${
                 mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
               }`}
             />
@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-white/5 bg-charcoal md:hidden">
+        <div className="border-t border-stone/10 bg-white md:hidden">
           <div className="flex flex-col px-6 py-6 gap-5">
             {links.map((link) => (
               <button
@@ -84,8 +84,8 @@ export default function Navbar() {
                 }}
                 className={`text-left text-sm font-medium uppercase tracking-[0.15em] transition-colors ${
                   pathname === link.href
-                    ? "text-bronze"
-                    : "text-cream/70 hover:text-bronze-light"
+                    ? "text-sage"
+                    : "text-stone/60 hover:text-sage-light"
                 }`}
               >
                 {link.label}
