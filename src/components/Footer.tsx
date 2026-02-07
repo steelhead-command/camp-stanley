@@ -44,13 +44,8 @@ export default function Footer() {
               Get in Touch
             </h4>
             <div className="mt-4 flex flex-col gap-3 text-sm text-cream/60">
-              <p>info@campstanley.com</p>
-              <p>(555) 123-4567</p>
-              <p>
-                123 Stanley Lane
-                <br />
-                Hill Country, TX 78624
-              </p>
+              <p>carolynfstanley@yahoo.com</p>
+              <p>Pacific Northwest</p>
             </div>
           </div>
         </div>
