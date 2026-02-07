@@ -32,6 +32,14 @@ vi.mock("next/font/google", () => ({
   }),
 }));
 
+// Mock next/image to render as a plain <img>
+vi.mock("next/image", () => ({
+  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+    return <img {...props} />;
+  },
+}));
+
 // Mock next/link to render as a plain <a>
 vi.mock("next/link", () => ({
   default: ({
